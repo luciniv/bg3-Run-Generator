@@ -1,0 +1,151 @@
+html {
+    font-size: 20px; 
+    font-family: "Rowdies", serif;
+    font-weight: 300;
+    font-style: normal; 
+    background-image: url("https://wallpapercave.com/wp/wp5502431.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+#outer {
+    height: 100vh;
+    width: 54vw;
+    min-width: 550px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgb(33, 32, 64, 0.8);
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 10vh 0 0 0;
+    min-width: 550px;
+    color: aliceblue;
+    font-weight: 200;
+}
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    padding: 0 0 7vh 0;
+    min-width: 550px;
+    color: aliceblue;
+    font-weight: 200;
+}
+
+#line {
+    border-top: 3px solid rgb(27, 26, 51);
+    width: 500px;
+    margin: auto;
+    margin-bottom: 1vh;
+
+}
+
+#content {
+    height: 42vh;
+    width: 54vw;
+    min-width: 550px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+#table1 {
+    display: inline-block;
+}
+
+#table2 {
+    display: inline-block;
+}
+
+#spacer {
+    width: 6vw;
+    display: inline-block;
+}
+
+#button {
+    width: 200px;
+    height: 100%;
+    margin: auto;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(27, 26, 51);
+
+    color: aliceblue;
+    text-align: center;
+    font-size: 28px;  
+
+    cursor: pointer;
+}
+
+#lock {
+    display: fixed;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#randomize {
+    width: 350px;
+    height: 36px;
+    margin: auto;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(27, 26, 51);
+
+    color: aliceblue;
+    text-align: center;
+    font-size: 28px;  
+
+    cursor: pointer;
+}
+
+img {
+    width: 54px;
+    height: 100%;
+    margin: auto;
+    margin-bottom: 14px;
+    margin-right: 4px;
+}
+
+#info {
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    min-width: 550px;
+
+    color: rgb(86, 94, 136);
+    font-weight: 200;
+}
+
+a {
+    color:rgb(86, 94, 136);
+}
+
+a:hover {
+    color: aliceblue;
+}
