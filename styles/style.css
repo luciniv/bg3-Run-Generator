@@ -188,8 +188,6 @@ h2 {
 }
 
 img {
-    width: 54px;
-    height: 100%;
     margin: auto;
     margin-bottom: 2vh;
     margin-right: 0.5vw;
@@ -251,18 +249,23 @@ a:hover {
     color: aliceblue;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
     #outer {
         margin-left: 1vw;
     }
     
     #outer, h1, h2, #content, #table1, #table2 {
-        width: 80vw;
-        max-width: 80vw;
+        width: 90vw;
+        max-width: 90vw;
     }
 
     h1 {
         font-size: 38px;
+        padding: 1vh 0 0 0;
+    }
+
+    h2 {
+        padding: 0 0 2vh 0;
     }
 
     #content {
@@ -281,10 +284,16 @@ a:hover {
         padding: 1vh 0 1vh 0;
     }
 
+    img {
+        width: 40px;
+        height: 100%;
+    }
+
     #randomize {
         width: 50vw;
         max-width: 50vw;
         height: 30px;
+        margin-top: -3vh;
         font-size: 24px;
     }
 }
