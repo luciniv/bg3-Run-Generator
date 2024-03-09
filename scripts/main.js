@@ -129,7 +129,7 @@ const classes = [
 
 const challenge = [
     "Minimize Longrests",
-    "No Deception / Persuation",
+    "No Deception / Persuasion",
     "Solo Run",
     "No Stealing",
     "Always Speak Rudely",
