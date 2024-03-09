@@ -3,10 +3,6 @@ html {
     font-family: "Rowdies", serif;
     font-weight: 300;
     font-style: normal; 
-    background-image: url("https://wallpapercave.com/wp/wp5502431.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
     overflow: hidden;
     -webkit-user-select: none;
     user-select: none;
@@ -23,6 +19,18 @@ body {
     width: 100vw;
     display: flex;
     justify-content: center;
+    background-color: black;
+}
+
+#background {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-image: url("https://wallpapercave.com/wp/wp5502431.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 #outer {
@@ -37,7 +45,7 @@ h1 {
     font-size: 40px;
     text-align: center;
     margin: 0;
-    padding: 7vh 0 0 0;
+    padding: 6vh 0 0 0;
     max-width: 70vw;
     color: aliceblue;
     font-weight: 200;
@@ -47,7 +55,7 @@ h2 {
     font-size: 20px;
     text-align: center;
     margin: 0;
-    padding: 0 0 7vh 0;
+    padding: 0 0 6vh 0;
     max-width: 70vw;
     color: aliceblue;
     font-weight: 200;
@@ -59,7 +67,6 @@ h2 {
     min-width: 70%;
     margin: auto;
     margin-bottom: 1vh;
-
 }
 
 #content {
@@ -249,6 +256,30 @@ a:hover {
     color: aliceblue;
 }
 
+@media only screen and (max-width: 1200px) {
+    #outer {
+        margin-left: 1vw;
+    }
+    
+    #outer, h1, h2, #content, #table1, #table2 {
+        width: 60vw;
+        max-width: 60vw;
+    }
+
+    #cat1, #cat2, #cat3, #cat4, #cat5, #cat6 {
+        width: 20vw;
+        max-width: 30vw;
+        margin-right: 10px;
+        padding: 1vh 0 1vh 0;
+        font-size: 20px;
+    }
+
+    img {
+        width: 40px;
+        height: 100%;
+    }
+}
+
 @media only screen and (max-width: 800px) {
     #outer {
         margin-left: 1vw;
@@ -271,17 +302,18 @@ a:hover {
 
     #content {
         height: 42vh;
-    }
-
-    #content {
         padding: 0px;
     }
 
+    #spacer {
+        display: none;
+    }
+
     #cat1, #cat2, #cat3, #cat4, #cat5, #cat6 {
-        width: 30vw;
-        max-width: 30vw;
+        width: 34vw;
+        max-width: 34vw;
         font-size: 18px;
-        margin-right: 10px;
+        margin-right: 6px;
         padding: 1vh 0 1vh 0;
     }
 
@@ -294,7 +326,7 @@ a:hover {
         width: 50vw;
         max-width: 50vw;
         height: 30px;
-        margin-top: 4vh;
+        margin-top: 6vh;
         font-size: 24px;
     }
 }
