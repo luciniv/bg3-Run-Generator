@@ -203,7 +203,7 @@ function mixClass(cat, options) {
             index1 += 1;
         }
     }
-    var level1 = (Math.floor(Math.random() * 12)) + 1;
+    var level1 = (Math.floor(Math.random() * 11)) + 1;
     var level2 = 12 - level1;
     cat.textContent = options[index1] + " " + level1 + ", " + options[index2] + " " + level2;
 }
