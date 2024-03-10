@@ -1,5 +1,6 @@
 var ran1 = true, ran2 = true, ran3 = true, 
-      ran4 = true, ran5 = true, ran6 = true;
+    ran4 = true, ran5 = true, ran6 = true,
+    multiclass = false;
 
 var prev_tav = {index: -1}, prev_gm = {index: -1}, prev_goal = {index: -1}, 
     prev_class = {index: -1}, prev_challenge = {index: -1}, prev_flavor = {index: -1};
@@ -90,11 +91,13 @@ const game_modes = [
     "Custom - Camp Cost Multiplier: 3",
     "Custom - Trader Price Modifier: 1",
     "Custom - Short Rest Full Heal",
-    "Custom - Hide Check Difficulty Class"
+    "Custom - Hide Check Difficulty Class",
+    "Custom - Randomized"
 ];
 
 const goal = [
-    "Protect All Companions",
+    "Friendly With All Companions",
+    "Hated By All Companions",
     "Explore Everything",
     "Speedrun",
     "Good Endings",
@@ -103,13 +106,15 @@ const goal = [
     "Maximize Casting Stat",
     "Multiclass 3 Times",
     "Multiclass 4 Times",
-    "Betray the Bad Guy",
-    "Betray the Good Guy",
+    "Betray The Bad Guy",
+    "Betray The Good Guy",
     "Hunt Down Evil",
     "Find Unique Loot",
     "Complete All Quests",
-    "Kill the Fewest Enemies",
-    "Talk to Avoid Combat"
+    "Kill The Fewest Enemies",
+    "Talk To Avoid Combat",
+    "Become Immortal",
+    "Maximize Summons"
 ];
 
 const classes = [
@@ -145,18 +150,20 @@ const challenge = [
     "No Inspirations",
     "Kill All Beasts",
     "Pick Dialogue Randomly",
-    "Always Pick Option 1"
-
+    "Always Pick Option 1",
+    "Always Pick The Last Option",
+    "No Savescumming"
 ];
 
 const flavor = [
     "Your memory is foggy, how did you get here?",
     "Hunting feyish magic...",
     "Someone wants you dead...",
-    "Searching for a lost loved one...",
+    "Searching for a long lost loved one...",
     "Searching for treasure and glory...",
     "Underdark merchant with a darker past...",
     "Bound by mercy...",
+    "Bound by a divine contract...",
     "Become one with the storm...",
     "Become one with the flame...",
     "Become one with the mind...",
@@ -166,14 +173,18 @@ const flavor = [
     "You are attuned to the dead...",
     "Reckless and impulsive...",
     "Cautious and quiet...",
+    "Deserter of an unjust war...",
     "A guard without their post...",
-    "You love to tell stories...",
+    "Searching for new stories...",
     "You enjoy the little things...",
-    "Desparate to feel something...",
     "Here for a short time, but a good time...",
     "Crippling alcoholism...",
     "Finders keepers...",
-    "You see it? You eat it..."
+    "You see it? You eat it...",
+    "Becoming something different...",
+    "Your mother wouldn't recognize you...",
+    "Foolish and gullible...",
+    "You fight dirty..."
 ];
 
 function toggle(toggleLock) {
@@ -182,6 +193,19 @@ function toggle(toggleLock) {
 
 // FIXME needs implemented
 function mixClass(cat, options) {
+    var index1 = Math.floor(Math.random() * options.length);
+    var index2 = Math.floor(Math.random() * options.length);
+    if (index1 == index2) {
+        if (index1 == (options.length - 1)) {
+            index1 = 0;
+        }
+        else {
+            index1 += 1;
+        }
+    }
+    var level1 = (Math.floor(Math.random() * 12)) + 1;
+    var level2 = 12 - level1;
+    cat.textContent = options[index1] + " " + level1 + ", " + options[index2] + " " + level2;
 }
 
 function choose(cat, options, super_title, prev_index) {
@@ -196,7 +220,7 @@ function choose(cat, options, super_title, prev_index) {
         super_title.classList.remove("hide");
     }
     if (hint.classList.contains("hide")) {
-        hint.classList.toggle("appear")
+        hint.classList.toggle("appear");
         hint.classList.remove("hide");
     }
     cat.style.color = colors[color_index];
@@ -211,7 +235,17 @@ function choose(cat, options, super_title, prev_index) {
     }
     prev_index.index = index;
     cat.textContent = options[index];
-    
+}
+
+super_title4.onclick = () => {
+    if (multiclass) {
+        super_title4.textContent = "CLASS";
+        multiclass = false;
+    }
+    else {
+        super_title4.textContent = "MULTICLASS";
+        multiclass = true;
+    }
 }
 
 rand.onclick = () => {
@@ -225,7 +259,12 @@ rand.onclick = () => {
         choose(cat3, goal, super_title3, prev_goal);
     }
     if (ran4) {
-        choose(cat4, classes, super_title4, prev_class);
+        if (multiclass) {
+            mixClass(cat4, classes);
+        }
+        else {
+            choose(cat4, classes, super_title4, prev_class);
+        }
     }
     if (ran5) {
         choose(cat5, challenge, super_title5, prev_challenge);
@@ -255,7 +294,12 @@ cat3.onclick = () => {
 
 cat4.onclick = () => {
     if (ran4) {
-        choose(cat4, classes, super_title4, prev_class);
+        if (multiclass) {
+            mixClass(cat4, classes);
+        }
+        else {
+            choose(cat4, classes, super_title4, prev_class);
+        }
     }
 };
 

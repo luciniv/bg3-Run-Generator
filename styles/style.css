@@ -62,7 +62,10 @@ h2 {
 }
 
 #line {
-    border-top: 3px solid rgb(27, 26, 51);
+    display: block;
+    height: 3px;
+    border: 0;
+    background: #1b1a33;
     max-width: 36vw;
     min-width: 70%;
     margin: auto;
@@ -101,6 +104,10 @@ h2 {
     color: rgb(86, 94, 136); 
     font-size: 16px;
     font-weight: 300;
+}
+
+#super_title4 {
+    cursor: pointer;
 }
 
 .hide {
@@ -292,12 +299,12 @@ a:hover {
 
     h1 {
         font-size: 34px;
-        padding: 1vh 0 0 0;
+        padding: 2vh 0 0 0;
     }
 
     h2 {
         font-size: 18px;
-        padding: 0 0 2vh 0;
+        padding: 0 0 6vh 0;
     }
 
     #content {
