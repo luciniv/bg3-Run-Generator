@@ -191,10 +191,12 @@ function toggle(toggleLock) {
     toggleLock.classList.toggle("dim");
 }
 
-// FIXME needs implemented
 function mixClass(cat, options) {
     var index1 = Math.floor(Math.random() * options.length);
     var index2 = Math.floor(Math.random() * options.length);
+    var color_index = Math.floor(Math.random() * colors.length);
+    var level1 = Math.floor(Math.random() * 11 + 1);
+    var level2 = 12 - level1;
     if (index1 == index2) {
         if (index1 == (options.length - 1)) {
             index1 = 0;
@@ -203,8 +205,7 @@ function mixClass(cat, options) {
             index1 += 1;
         }
     }
-    var level1 = Math.floor(Math.random() * 11 + 1);
-    var level2 = 12 - level1;
+    cat.style.color = colors[color_index];
     cat.textContent = options[index1] + " " + level1 + ", " + options[index2] + " " + level2;
 }
 
