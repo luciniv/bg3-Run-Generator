@@ -4,7 +4,7 @@ Click the categories to randomize their contents, and use the arcane lock icons 
 
 **Open to suggestions!** <br>
 I will be adding more results as they come to mind, as well as features including:
-- Complex multiclass randomization option
+- Improved custom difficulty randomizer
 - A "Mad Lib" of your results (sentence with inputs plugged in)
 - Save your results(?) or simply receive a formatted copy of them
 
